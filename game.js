@@ -41,6 +41,9 @@ function create() {
   });
 
   this.input.keyboard.on('keydown-SPACE', () => bird.setVelocityY(-250));
+  
+  // 👉 Agregado para móvil (touch o click)
+this.input.on('pointerdown', () => bird.setVelocityY(-250));
 
   // ✅ Colisión entre pájaro y tubos
   this.physics.add.overlap(bird, pipes, hitPipe, null, this);
